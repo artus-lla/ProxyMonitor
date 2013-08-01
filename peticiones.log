@@ -1,0 +1,4 @@
+Servidor CGI escuchando en localhost puerto 9084
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 42555)
+----------------------------------------

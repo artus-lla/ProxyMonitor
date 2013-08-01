@@ -3,7 +3,7 @@
 import sys, os
 from http.server import HTTPServer, CGIHTTPRequestHandler
 
-PORT = 20020
+PORT = 9080
 
 manejador = CGIHTTPRequestHandler
 manejador.cgi_directories = ["/cgi-bin"] # Directorio de los scripts

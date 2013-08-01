@@ -12,12 +12,18 @@ header h1{
     background:#2D83C3;
     color:#E6E8D4;
     text-align:right;
+    padding:.3em;
+}
+
+header a{
+    color:#E6E8D4;
+    text-decoration:none;
 }
 
 nav{
     background:#20143B;
     color:#D8D7E4;
-    padding: 1em;
+    padding: .8em;
     margin:auto;
 }
 
@@ -33,7 +39,7 @@ nav a{
 
 footer{
    background: #D8D7E4;
-   margin-top: 15em;
+   margin-top: 11em;
 }
 
 /*-----------------------------
@@ -46,20 +52,45 @@ form{
     border-radius: 7px;
     width: 34em;
     margin:auto;
-    margin-top:8em;
+    margin-top:10%;
     padding:1em;
-    
-    
+}
+
+.form-red{
+    background:#EDEDED;
+    border:solid black 1px;
+    border-radius: 7px;
+    width:auto;
+    margin-right:.5em;
+}
+
+.form-red div{
+    margin:.3em;
+    padding:.2em;
+}
+
+.form-section{
+    display:inline-block;
+}
+
+.section-contenedor{
+    text-align:center;
 }
 
 form div{
     margin: 1em;
+    
+}
+
+.marco-red{
+    border: solid 1px gray;
+    margin: 1em;
+    padding:1em;
 }
 
 form fieldset{
-    height:13em;
     margin-top: .5em;
-    padding-top: 1.5em;
+    padding-top: auto;
     text-align:center;
 }
 
@@ -99,3 +130,26 @@ label{
     white-space:pre;
 }
    
+.on-place{
+    font-weight:bold;
+    color:#F3F3F3;
+}
+
+.on-place{
+    font-weight:bold;
+    color:#F3F3F3;
+}
+
+.on-place2{
+    font-weight:bold;
+    color:#20143B;
+    font-size:.9em;
+}
+
+.nav2{
+    background:#6C84B6;
+    color:#00220F;
+    text-decoration:none;
+    display:block;
+    padding:.3em;
+}
