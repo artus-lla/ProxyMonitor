@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import lib.interfaces as nic  #en red.py se llama desde lib
-import lib.leefiltros as leefiltros
 
 def insertar_content_type():
     print("Content-Type:text/html\n")
@@ -41,7 +40,8 @@ nics = dict(ip_eth0 = nic.addr0,
             netmask_eth0 = nic.netm0,
             network_eth0 = nic.netw0,
             broadcast_eth0 = nic.broa0,
-                        
+            gateway0 = nic.gate0,
+            
             ip_eth1 = nic.addr1,
             netmask_eth1 = nic.netm1,
             network_eth1 = nic.netw1,
@@ -82,7 +82,7 @@ def encabezado_red():
 </section>
     <section class="section-contenedor">
       <section class="form-section">
-	<form class="form-red" action="procesar_red.py" method="get">
+	<form class="form-red">
 	  <fieldset>
 	    <legend>eth0</legend>
 	    <div class="marco-red">
@@ -111,8 +111,13 @@ def encabezado_red():
 		<label for="broad_eth0">Broadcast:           </label>
 		<input type="text" id="broad_eth0" name="broad_eth0_input"
 	  	       value="{broadcast_eth0}" />
+	      </div>
 
-	   
+              <div>
+		<label for="puerta_eth0">Puerta de enlace: </label>
+		<input type="text" id="puerta_eth0" name="puerta_eth0_input"
+	  	       value="{gateway0}" />
+	      </div>
     
 	    </div>
 	 <!--
@@ -121,13 +126,13 @@ def encabezado_red():
             </div> -->
 
 	  </fieldset>
-
+	</form>
       </section>
 
       <section class="form-section">
-    
-	  <fieldset  class="form-red">
-	    <legend class="leyenda-eth1">eth1</legend>
+        <form class="form-red">
+	  <fieldset>
+	    <legend>eth1</legend>
 	    <div class="marco-red">
 	      <div>
 		<label for="dir_ip_eth1">Dirección IP:         </label>
@@ -162,21 +167,21 @@ def encabezado_red():
 	      </div>
     
 	    </div>
+	    
 
+	   <!--
 	    <div>
 	      <input type="submit" name="boton_enviar_eth0" value="Guardar" />
-
-            </div>
-    
+            </div>  -->
 
 	  </fieldset>
-    </form>
+
+	</form>
+<input type="submit"  name="ene" value="yes" />
       </section>
     </section>
 """.format(**nics)
     print(texto)
-
-values_filtros = leefiltros.filtros
 
 def encabezado_filtros():
     texto = """
@@ -208,19 +213,32 @@ def encabezado_filtros():
   
 <section class="section-contenedor">
    <section>
-	
-	  <form class="marco-sitios-bloqueados" action="procesar_filtros.py" method="get" >
+	<form  class="marco-sitios-bloqueados">
+	  <div>
+	    <label for="agregar">Ingrese la dirección: </label>
+	    <input type="text" id="agregar" name="agregar_iput"
+		   autofocus="autofocus" />
+	    <input type="submit" name="boton_agregar" value="Agregar" />
+	  </div>
+	</form>
+   </section>
+
+	<section>
+	  <form class="marco-sitios-bloqueados">
 	    <fieldset>
 	      <legend>Lista de sitios bloqueados</legend>
-	       <textarea id="filtros" name="filtros_textarea" cols="60" rows="15"
-                 autofocus="autofocus" >{}</textarea>
-                 <div>
-                  <input type="submit" name="boton_fitro" value="Filtrar sitios" />
-                  </div>	   
+	      <ol>
+		<li>youtube.com <a href=""> Eliminar</a></li>
+		<li>google.com <a href=""> Eliminar</a></li>
+		<li>vimeo.com <a href=""> Eliminar</a></li>
+	      </ol>
 	    </fieldset>
 	  </form>
 	</section>
-</section>""".format(values_filtros)
+</section>"""
+
+
+
     print(texto)
 
 

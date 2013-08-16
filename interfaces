@@ -1,0 +1,21 @@
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+auto eth0
+auto eth1
+
+# Interfaz para conexión a la red local
+iface eth0 inet static
+	address 192.168.0.27
+	netmask 255.255.255.0
+	network 192.168.0.0
+	broadcast 192.168.0.255
+	
+# Interfaz para conexión a Internet
+iface eth1 inet static
+	address 192.168.1.28
+	netmask 255.255.125.0
+	network 192.168.1.0
+	broadcast 192.168.1.255
+	gateway 192.168.1.1

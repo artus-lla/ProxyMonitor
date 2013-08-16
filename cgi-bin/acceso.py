@@ -8,9 +8,6 @@ import lib.core as core
 
 mi_html.insertar_content_type()
 
-
-
-
 usuario_auth = b'YWRtaW4='
 password_auth = b'YWRtaW4x'
 
@@ -24,15 +21,14 @@ def validar_usuario_y_contrasenia(correcto = False):
     # Nos aseguramos que los campos no estén vacíos
     if usuario == None or contrasenia == None:
         correcto = False
-
-    if core.decodificar(usuario_auth).decode() != usuario:
+    elif core.decodificar(usuario_auth).decode() != usuario:
         correcto = False
-
-    if core.decodificar(password_auth).decode() != contrasenia:
+    elif core.decodificar(password_auth).decode() != contrasenia:
         correcto = False
     else:
         correcto = True        
-        return correcto
+
+    return correcto
         
 
 if validar_usuario_y_contrasenia() is True:
